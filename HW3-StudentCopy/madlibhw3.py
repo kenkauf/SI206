@@ -11,6 +11,7 @@
 # 1) Print the new text
 print("START*******")
 
+<<<<<<< HEAD
 # code developed by Jackie Cohen; revised by Paul Resnick
 # further revised by Colleen van Lent for Python3
 import nltk # requires some downloading/installing dependencies to use all its features; numpy is especially tricky to install
@@ -62,5 +63,7 @@ for (word, tag) in tagged_tokens:
 		final_words.append(spaced(new_word))
 
 print ("".join(final_words))
+=======
+>>>>>>> 429a8bbd4eadd5c34e2a1103eb8332c29b88ea85
 
 print("\n\nEND*******")
