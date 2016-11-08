@@ -11,43 +11,35 @@
 # 1) Print the new text
 print("START*******")
 
-<<<<<<< HEAD
 # code developed by Jackie Cohen; revised by Paul Resnick
 # further revised by Colleen van Lent for Python3
-import nltk # requires some downloading/installing dependencies to use all its features; numpy is especially tricky to install
+import nltk 
+from nltk.book import *
 import random
 from nltk import word_tokenize,sent_tokenize
 
 # import nltk
-nltk.download('text2')
+nltk.download('punkt')
 
 
 
-debug = True
+debug = False #True
 
-# get file from user to make mad lib out of
-if debug:
-	print ("Getting information from file madlib_test.txt...\n")
-fname = "madlibtest2.txt" # need a file with this name in directory
-
-f = open(fname, 'r')
-para = f.read()
+text2 = (text2[:150])
+para = ' '.join(text2)
+print(para)                       # generate original text
 tokens = nltk.word_tokenize(para)
-print("TOKENS")
-print(tokens)
 tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
-print("TAGGED TOKENS")
-print(tagged_tokens)
 if debug:
 	print ("First few tagged tokens are:")
 	for tup in tagged_tokens[:5]:
 		print (tup)
 
-tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective"}
-substitution_probabilities = {"NN":.1,"NNS":.2,"VB":.25,"JJ":.25}
+tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective"}        # what parts of speech to tag
+substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1, "RB":.1}
 
 def spaced(word):
-	if word in [",", ".", "?", "!", ":"]:
+	if word in [",", ".", "?", "!", ":"]:         #look only for words and not extra characters
 		return word
 	else:
 		return " " + word
@@ -55,7 +47,7 @@ def spaced(word):
 final_words = []
 
 
-for (word, tag) in tagged_tokens:
+for (word, tag) in tagged_tokens:                        # replacing tagged words
 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
 		final_words.append(spaced(word))
 	else:
@@ -63,7 +55,5 @@ for (word, tag) in tagged_tokens:
 		final_words.append(spaced(new_word))
 
 print ("".join(final_words))
-=======
->>>>>>> 429a8bbd4eadd5c34e2a1103eb8332c29b88ea85
 
 print("\n\nEND*******")

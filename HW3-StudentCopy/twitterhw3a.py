@@ -9,17 +9,17 @@
 # 	can print out a success/failure message if you want to.""")
 
 import tweepy
-from twitauth import *
+from twitauth import *            # private user keys and codes in other file
 
-# Boilerplate code here
+
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
-auth.set_access_token(access_token,access_token_secret)
+auth.set_access_token(access_token,access_token_secret)  #authenication
 
 api = tweepy.API(auth)
 
-fname = 'C:/Users/kenka/Desktop/Photos/murrayintree.jpg'
+fname = 'C:/Users/kenka/Desktop/Photos/murrayintree.jpg' # image location
 message = '#UMSI-206 #Proj3'
-# try:
-api.update_with_media(filename=fname, status=message) # API Reference: http://docs.tweepy.org/en/v3.5.0/api.html
-# except:
-#     print("Unable to download image")
+try:
+	api.update_with_media(filename=fname, status=message) # API Reference: http://docs.tweepy.org/en/v3.5.0/api.html
+except:
+	print("Unable to download image")                        # if failed, prompt user

@@ -11,7 +11,7 @@ from textblob import TextBlob
 import sys
 from twitauth import *
 
-def uprint(*objects, sep=' ', end='\n', file=sys.stdout):
+def uprint(*objects, sep=' ', end='\n', file=sys.stdout):        #to print unicode chars
     enc = file.encoding
     if enc == 'UTF-8':
         print(*objects, sep=sep, end=end, file=file)
@@ -21,19 +21,19 @@ def uprint(*objects, sep=' ', end='\n', file=sys.stdout):
 
 # Boilerplate code here
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
-auth.set_access_token(access_token,access_token_secret)
+auth.set_access_token(access_token,access_token_secret)         #authenication for twitter
 
 api = tweepy.API(auth)
-#Now we can Create Tweets, Delete Tweets, and Find Twitter Users
 
-public_tweets = api.search('#AnnArbor')
+term = input("Enter one search term beginning with a #hastag: ")  #prompting search term
+public_tweets = api.search(term)
 
 avsub = 0
 avpol = 0
 tweetcount = 0
 for tweet in public_tweets:                 # reference from https://github.com/praritlamba/Mining-Twitter-Data-for-Sentiment-Analysis
 	uprint(tweet.text)
-	analysis = TextBlob(tweet.text)
+	analysis = TextBlob(tweet.text)          #collection analysis scores and total tweet count
 	avpol += (analysis.sentiment.polarity)
 	avsub += (analysis.sentiment.subjectivity)
 	tweetcount += 1
