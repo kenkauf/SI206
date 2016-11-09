@@ -21,10 +21,10 @@ print
 
 base_url = 'https://www.si.umich.edu/programs/bachelor-science-information/bsi-admissions'
 r = requests.get(base_url)
-soup = BeautifulSoup(r.text, "html.parser")
+soup = BeautifulSoup(r.text, "html.parser")               #connect to webpage and parse data
 
 ## Part 1
-findword = soup.find_all(text = re.compile('student'))
+findword = soup.find_all(text = re.compile('student'))        #change student to AMAZING student in page
 for word in findword:
     newword = str(word).replace('student', 'AMAZING student')
     word.replace_with(newword)
