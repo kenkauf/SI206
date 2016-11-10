@@ -15,10 +15,6 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-print
-print (" - ....working......")
-print
-
 base_url = 'https://www.si.umich.edu/programs/bachelor-science-information/bsi-admissions'
 r = requests.get(base_url)
 soup = BeautifulSoup(r.text, "html.parser")               #connect to webpage and parse data
@@ -28,3 +24,9 @@ findword = soup.find_all(text = re.compile('student'))        #change student to
 for word in findword:
     newword = str(word).replace('student', 'AMAZING student')
     word.replace_with(newword)
+
+### Part 2 
+for link in soup.findAll('iframe'):
+	link['src'] = "C:/Users/kenka/new-repo/kenneth-bone.png"
+
+print (" - ....working......")
