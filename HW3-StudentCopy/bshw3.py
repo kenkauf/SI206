@@ -19,21 +19,20 @@ base_url = 'https://www.si.umich.edu/programs/bachelor-science-information/bsi-a
 r = requests.get(base_url)
 soup = BeautifulSoup(r.text, "html.parser")               #connect to webpage and parse data
 
-## Part 1
+#P1
 findword = soup.find_all(text = re.compile('student'))        #change student to AMAZING student in page
 for word in findword:
     newword = str(word).replace('student', 'AMAZING student')
     word.replace_with(newword)
 
-### Part 2 
+#P2 
 for link in soup.findAll('iframe'):
 	link['src'] = "C:/Users/kenka/new-repo/kenneth-bone.png"
-
-### Part 3
+#P3
 for img in soup.findAll('img'):
-	img['src'] = "C:/Users/tom/projects/SI206/Homework3/media/logo.png"
+	img['src'] = "C:/Users/kenka/new-repo/SI206/HW3-StudentCopy/media/logo.png"
 
-text_file = open("Hw3SoupOutput.html", "w")
+text_file = open("bshw3_Output.html", "w")
 print('Outputting html file....')
 text_file.write(str(soup))
 text_file.close()
