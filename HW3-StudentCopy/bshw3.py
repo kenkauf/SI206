@@ -30,7 +30,7 @@ for link in soup.findAll('iframe'):
 	link['src'] = "C:/Users/kenka/new-repo/kenneth-bone.png"
 #P3
 for img in soup.findAll('img'):
-	img['src'] = "C:/Users/kenka/new-repo/SI206/HW3-StudentCopy/media/logo.png"
+	img['src'] = "C:/Users/kenka/new-repo/HW3-StudentCopy/media/logo.png"
 
 text_file = open("bshw3_Output.html", "w")
 print('Outputting html file....')
