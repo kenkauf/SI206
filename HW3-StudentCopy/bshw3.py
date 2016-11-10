@@ -29,4 +29,12 @@ for word in findword:
 for link in soup.findAll('iframe'):
 	link['src'] = "C:/Users/kenka/new-repo/kenneth-bone.png"
 
-print (" - ....working......")
+### Part 3
+for img in soup.findAll('img'):
+	img['src'] = "C:/Users/tom/projects/SI206/Homework3/media/logo.png"
+
+text_file = open("Hw3SoupOutput.html", "w")
+print('Outputting html file....')
+text_file.write(str(soup))
+text_file.close()
+print('Done')
