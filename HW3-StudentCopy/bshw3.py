@@ -11,6 +11,8 @@
 # Deliverables
 # Make sure the new page is uploaded to your GitHub account.
 
+print('\nKennedy Kaufman // 61371023\n\n\n')
+
 import requests
 import re
 from bs4 import BeautifulSoup
@@ -26,14 +28,14 @@ for word in findword:
     word.replace_with(newword)
 
 #P2 
-for link in soup.findAll('iframe'):
+for link in soup.findAll('iframe'):                              # replacing main image with photo of Ken Bone
 	link['src'] = "C:/Users/kenka/new-repo/kenneth-bone.png"
 #P3
 for img in soup.findAll('img'):
-	img['src'] = "C:/Users/kenka/new-repo/HW3-StudentCopy/media/logo.png"
+	img['src'] = "C:/Users/kenka/new-repo/HW3-StudentCopy/media/logo.png"      #Replaceing local images with media logo stored in different file
 
-text_file = open("bshw3_Output.html", "w")
+text_file = open("bshw3_Output.html", "w")        
 print('Outputting html file....')
-text_file.write(str(soup))
+text_file.write(str(soup))                            # writing updated changes onto HTML file
 text_file.close()
 print('Done')

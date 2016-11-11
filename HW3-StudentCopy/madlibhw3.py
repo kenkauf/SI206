@@ -18,8 +18,10 @@ from nltk.book import *
 import random
 from nltk import word_tokenize,sent_tokenize
 
-# import nltk
-nltk.download('punkt')
+print('\nKennedy Kaufman // 61371023\n\n\n')
+
+
+nltk.download('punkt')    # import nltk
 
 
 
@@ -29,7 +31,7 @@ text2 = (text2[:150])
 para = ' '.join(text2)
 print(para)                       # generate original text
 tokens = nltk.word_tokenize(para)
-tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
+tagged_tokens = nltk.pos_tag(tokens) # gives a tagged list of tuples
 if debug:
 	print ("First few tagged tokens are:")
 	for tup in tagged_tokens[:5]:

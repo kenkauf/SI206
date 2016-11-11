@@ -9,7 +9,9 @@
 import tweepy
 from textblob import TextBlob
 import sys
-from twitauth import *
+from twitauth import *                  # Store sensative private info in different file
+
+print('\nKennedy Kaufman // 61371023\n\n\n')
 
 def uprint(*objects, sep=' ', end='\n', file=sys.stdout):        #to print unicode chars
     enc = file.encoding
@@ -38,5 +40,5 @@ for tweet in public_tweets:                 # reference from https://github.com/
 	avsub += (analysis.sentiment.subjectivity)
 	tweetcount += 1
 
-print("Average subjectivity is ", avsub/tweetcount)
+print("\nDone\n\nAverage subjectivity is ", avsub/tweetcount)
 print("Average polarity is ", avpol/tweetcount)
