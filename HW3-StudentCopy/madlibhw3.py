@@ -37,7 +37,7 @@ if debug:
 	for tup in tagged_tokens[:5]:
 		print (tup)
 
-tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective"}        # what parts of speech to tag
+tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective","RB":"an adverb"}        # what parts of speech to tag
 substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1, "RB":.1}
 
 def spaced(word):
